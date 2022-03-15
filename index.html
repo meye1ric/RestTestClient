@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Rest Test Client</title>
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.13.0-rc.2/jquery-ui.min.js" integrity="sha256-RQLbEU539dpygNMsBGZlplus6CkitaLy0btTCHcULpI=" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css">
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js"></script>
+
+    <script type="text/javascript" src="./main.js"></script>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <style>
+      body {
+        max-width: 1000px;
+        background-image: url('bg_bottom_gradient.png');
+        background-repeat: repeat-x;
+        font-family:serif;
+        font-size:large;
+      }
+    </style>
+
+  </head>
+
+  <body>
+
+    <div id="titleArea" style="margin-bottom:0px;">
+      <div style="float:left; font-weight:bold; font-size:larger; margin-left:350px; margin-top:20px;">Rest Test Client</div>
+      <div style="clear:both;"></div>
+      <div id="errorBox" style="float:left; margin-left:100px; width:800px;">&nbsp;
+        <div id="error" style="float:left; font-size:large; font-weight:bold; color:brown;">
+          <div id="errorLabel" style="float:left;"></div>
+          <div id="errorCode" style="float:left;"></div>
+          <div id="errorMessage" style="float:left; margin-left:10px;"></div>
+        </div>
+      </div>
+      <div style="clear:both;"></div>
+
+      <div style="margin-left:100px; margin-top:20px; margin-bottom:130px; width:800px;">
+        <label style = "font-weight:bold; font-size:larger;">Build Request</label>
+        <div style="clear:both; height:10px;"></div>
+        <div style="margin:10px; float:left; width:40px;">
+           <label style="font-weight:bold;">Verb:&nbsp;&nbsp;</label>
+           <div style="clear:both; height:12px;"></div>
+           <label style="font-weight:bold;">URL:&nbsp;&nbsp;</label>
+           <div style="clear:both; height:12px;"></div>
+           <label style="font-weight:bold;">Key:&nbsp;&nbsp;</label>
+         </div>
+         <div style="margin:10px; float:left;">
+            <select name="verb" id="verb">
+              <option value="GET" selected="selected">GET</option>
+              <option value="POST">POST</option>
+              <option value="OPTIONS">OPTIONS</option>
+            </select>
+           <div style="clear:both; height:10px;"></div>
+           <!-- <input type="text" id="url" name="url" size="90" value="https://api2t.dot.state.mn.us/SnowIceMaterials/1/consumed/daterange/2021-07-01,2021-07-02" /> -->
+           <input type="text" id="url" name="url" size="90" />
+           <div style="clear:both; height:10px;"></div>
+           <!-- <input type="text" id="userKey" name="userKey" size="90" value="117f941e3bb872b9e463cd325c9df0c3" /> -->
+           <input type="text" id="userKey" name="userKey" size="90" />
+          </div>
+      </div>
+   
+      <div style="clear:both;"></div>
+
+      <button type="submit" id="getData" style="float:left; margin-left:300px; margin-bottom:20px; background-color:aquamarine; border-radius:8px;">Send Request</button>
+
+    </div>
+
+    <div style="clear:both;"></div>
+
+    <div id="label30" style = "display:none;">
+      <label style = "margin-left:20px; font-weight:bold; font-size:larger;">Response Code:</label>
+    </div>
+ 
+    <div id="resultsArea3" style="float:left; margin:20px; width:100%; font-size:medium;"></div>
+
+    <div style="clear:both; height:20px;"></div>
+
+    <div id="label10" style = "display:none;">
+      <label style = "margin-left:20px; font-weight:bold; font-size:larger;">Response Header:</label>
+    </div>
+ 
+    <div id="resultsArea1" style="float:left; margin:20px; width:100%; font-size:medium;"></div>
+
+    <div style="clear:both; height:20px;"></div>
+
+    <div id="label20" style = "display:none;">
+      <label style = "margin-left:20px; font-weight:bold; font-size:larger;">Response:</label>
+    </div>
+    
+    <div id="resultsArea2" style="float:left; margin:20px; width:100%; font-size:medium; "></div>
+    
+  </body>
+</html>
